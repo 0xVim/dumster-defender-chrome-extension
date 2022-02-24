@@ -11,8 +11,7 @@
     "activeTab",
     "webRequest",
     "background",
-    "scripting",
-    "https://6v56radu08.execute-api.us-east-2.amazonaws.com/*"
+    "scripting"
   ],
   "host_permissions": [
     "https://6v56radu08.execute-api.us-east-2.amazonaws.com/*"
