@@ -1,0 +1,48 @@
+{
+  "name": "Notorious Defenders",
+  "description": "Defending the earth from Notorious Aliens",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "webRequest",
+    "background",
+    "scripting",
+    "https://6v56radu08.execute-api.us-east-2.amazonaws.com/*"
+  ],
+  "host_permissions": [
+    "https://6v56radu08.execute-api.us-east-2.amazonaws.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/defender-16.png",
+      "32": "/images/defender-32.png",
+      "48": "/images/defender-48.png",
+      "128": "/images/defender-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.notoriousaliens.com/game/dumpster/"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "/images/defender-16.png",
+    "32": "/images/defender-32.png",
+    "48": "/images/defender-48.png",
+    "128": "/images/defender-128.png"
+  }
+}
