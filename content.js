@@ -1,5 +1,9 @@
 let jwtToken = '';
 
+chrome.runtime.sendMessage('ping', res => {
+
+});
+
 chrome.runtime.onMessage.addListener((message, sender, response) => {
     if (message.action === 'render_button') {
         response('Token received');

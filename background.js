@@ -13,6 +13,12 @@ chrome.webRequest.onSendHeaders.addListener((request) => {
     urls: ["https://6v56radu08.execute-api.us-east-2.amazonaws.com/*",]
 }, ["extraHeaders", "requestHeaders"]);
 
+chrome.runtime.onMessage.addListener(
+    function(request, sender, response) {
+            response('pong');
+    }
+);
+
 function setToken(token) {
     chrome.tabs.query({active: true, currentWindow: true, url: 'https://*.notoriousaliens.com/*'}, (tabs) => {
         tabs.forEach(tab => {
