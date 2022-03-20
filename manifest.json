@@ -1,7 +1,7 @@
 {
   "name": "Notorious Defenders",
   "description": "Defending the earth from Notorious Aliens",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -13,7 +13,7 @@
     "scripting"
   ],
   "host_permissions": [
-    "https://6v56radu08.execute-api.us-east-2.amazonaws.com/*"
+    "https://3lo0d7v5e9.execute-api.us-east-2.amazonaws.com/*"
   ],
   "action": {
     "default_popup": "popup.html",

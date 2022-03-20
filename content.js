@@ -59,7 +59,7 @@ function dive() {
 
         displayLoading();
 
-        fetch('https://6v56radu08.execute-api.us-east-2.amazonaws.com/Prod/dive/paid', {
+        fetch('https://3lo0d7v5e9.execute-api.us-east-2.amazonaws.com/Prod/dive/paid', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -112,15 +112,30 @@ function displayResult(payload) {
 
 function tabulateItems(payload) {
     let items = {};
-    payload.forEach((item) => {
-        let key = Object.keys(item)[0];
-        let quantity = item[key];
-        if (items[key]) {
-            items[key] = items[key] + quantity;
-        } else {
-            items[key] = quantity;
-        }
-    });
+
+    if(payload.normal) {
+        payload.normal.forEach((item) => {
+            let key = item.name;
+            let quantity = item.amount;
+            if (items[key]) {
+                items[key] = items[key] + quantity;
+            } else {
+                items[key] = quantity;
+            }
+        });
+    }
+
+    if(payload.special) {
+        payload.special.forEach((item) => {
+            let key = item.name;
+            let quantity = item.amount;
+            if (items[key]) {
+                items[key] = items[key] + quantity;
+            } else {
+                items[key] = quantity;
+            }
+        });
+    }
 
     return items;
 }

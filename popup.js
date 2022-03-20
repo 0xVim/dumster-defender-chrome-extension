@@ -5,6 +5,8 @@ btnStart.addEventListener("click", async () => {
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
     function: reloadPage,
+  }).then(() => {
+    window.close();
   });
 });
 

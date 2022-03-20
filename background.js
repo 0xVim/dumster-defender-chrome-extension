@@ -10,7 +10,7 @@ chrome.webRequest.onSendHeaders.addListener((request) => {
         }
     }
 }, {
-    urls: ["https://6v56radu08.execute-api.us-east-2.amazonaws.com/*",]
+    urls: ["https://3lo0d7v5e9.execute-api.us-east-2.amazonaws.com/*",]
 }, ["extraHeaders", "requestHeaders"]);
 
 chrome.runtime.onMessage.addListener(
